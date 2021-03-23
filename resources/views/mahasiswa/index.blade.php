@@ -12,7 +12,7 @@ use PhpParser\Node\Stmt\Echo_;
     <container class="container text-center">
         <div class="card mt-3">
             <div class="card-header bg-primary text-white">
-                Form Input data user
+                Data Mahasiswa
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
@@ -21,20 +21,19 @@ use PhpParser\Node\Stmt\Echo_;
                             <th scope="col">No.</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Email</th>
-                            <th scope="col">No. Telp</th>
                             <th scope="col">Program Studi</th>
-                            <th scope="col">Alamat</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+
+                        @foreach($mahasiswa as $mhs)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Wahyu Syarif</td>
-                            <td>Wahyush04@gmail.com</td>
-                            <td>083129679506</td>
-                            <td>S1 ILMU KOMPUTER</td>
-                            <td>Lombok Timur</td>
+                            <th scope="row">{{$loop->iteration}}</th>
+                            <td>{{$mhs->nama}}</td>
+                            <td>{{$mhs->nim}}</td>
+                            <td>{{$mhs->email}}</td>
+                            <td>{{$mhs->jurusan}}</td>
                             <td>
 
                                 <a href="" type="button" class="btn btn-primary editbtn" data-bs-toggle="modal" data-bs-target="">Edit</a>
@@ -42,6 +41,9 @@ use PhpParser\Node\Stmt\Echo_;
                                 <a href="" class="btn btn-danger" onclick="return confirm('Yakin Ingin menghapus data ini?')"> Hapus </a>
                             </td>
                         </tr>
+                        @endforeach
+
+
                     </tbody>
 
                 </table>
