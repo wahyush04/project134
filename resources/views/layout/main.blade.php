@@ -15,22 +15,22 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="{{url('/')}}">Laravel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Pricing</a>
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
+                    <a class="nav-link" href="{{url('/aboutme')}}">Aboutme</a>
+                    <a class="nav-link" href="{{url('/mahasiswa')}}">Mahasiswa</a>
+                    <a class="nav-link">Disabled</a>
                 </div>
             </div>
         </div>
     </nav>
 
-@yield('container')
+    @yield('container')
 
     <!-- Optional JavaScript; choose one of the two! -->
 
