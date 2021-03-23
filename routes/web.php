@@ -22,3 +22,5 @@
 
 Route::get('/', 'PagesController@home');
 Route::get('/aboutme', 'PagesController@aboutme');
+
+Route::get('/mahasiswa', 'MahasiswaController@index');
