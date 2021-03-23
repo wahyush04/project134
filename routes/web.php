@@ -11,11 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/aboutme', function () {
-    $nama = 'Wahyu Syarif';
-    return view('aboutme', ['nama' => $nama]);
-});
+// Route::get('/aboutme', function () {
+//     $nama = 'Wahyu Syarif';
+//     return view('aboutme', ['nama' => $nama]);
+// });
+
+Route::get('/', 'PagesController@home');
+Route::get('/aboutme', 'PagesController@aboutme');
