@@ -20,6 +20,7 @@ use PhpParser\Node\Stmt\Echo_;
                         <tr>
                             <th scope="col">No.</th>
                             <th scope="col">Nama</th>
+                            <th scope="col">Nim</th>
                             <th scope="col">Email</th>
                             <th scope="col">Program Studi</th>
                             <th scope="col">Aksi</th>
