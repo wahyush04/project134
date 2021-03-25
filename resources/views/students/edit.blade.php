@@ -4,22 +4,23 @@ use PhpParser\Node\Stmt\Echo_;
 ?>
 @extends('layout.main')
 
-@section('title','Tambah Data')
+@section('title','Ubah data')
 
 @section('container')
 
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <h1>Form Tambah Data Mahasiswa</h1>
+            <h1>Form Ubah data</h1>
 
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="/students">
+                    <form method="POST" action="/students/{{$student->id}}">
+                    @method('patch')
                         @csrf
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input type="text" name="nama" value="{{old('nama')}}" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan Nama">
+                            <input type="text" name="nama" value="{{($student->nama)}}" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan Nama">
                             @error('nama')
                             <div class="invalid-feedback">
                                 {{$message}}
@@ -29,7 +30,7 @@ use PhpParser\Node\Stmt\Echo_;
 
                         <div class="form-group">
                             <label for="nim">Nim</label>
-                            <input type=" text" name="nim" value="{{old('nim')}}" class="form-control @error('nim') is-invalid @enderror" placeholder="Masukkan nim">
+                            <input type=" text" name="nim" value="{{$student->nim}}" class="form-control @error('nim') is-invalid @enderror" placeholder="Masukkan nim">
                             @error('nim')
                             <div class="invalid-feedback">
                                 {{$message}}
@@ -38,11 +39,11 @@ use PhpParser\Node\Stmt\Echo_;
                         </div>
                         <div class="form-group">
                             <label for="semail">Email</label>
-                            <input type="email" name="email" value="{{old('email')}}" class="form-control" placeholder="Masukkan Email">
+                            <input type="email" name="email" value="{{$student->email}}" class="form-control" placeholder="Masukkan Email">
                         </div>
                         <div class="form-group">
                             <label for="jurusan">Jurusan</label>
-                            <input type="text" name="jurusan" value="{{old('jurusan')}}" class="form-control" placeholder="Masukkan Jurusan">
+                            <input type="text" name="jurusan" value="{{$student->jurusan}}" class="form-control" placeholder="Masukkan Jurusan">
                         </div>
                         <!-- <div class="form-group">
                             <label for="sprodi">Program Studi</label>
@@ -60,8 +61,7 @@ use PhpParser\Node\Stmt\Echo_;
                         </div> -->
 
                         <button type="reset" class="btn btn-danger" name="breset">KOSONGKAN</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
+                        <button type="submit" class="btn btn-primary" name="submit">Ubah data</button>
                     </form>
                 </div>
             </div>
