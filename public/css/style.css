@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap");
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.head__custom-nav .navbar-brand img {
+    width: 18px;
+    height: 18px;
+}
+
+
+.head__custom-nav .navbar-brand span {
+    font-weight: 700;
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.head__custom-nav button {
+    padding: 0;
+}
+
+.head__custom-nav button span img {
+    width: 45px;
+}
+
+.head__custom-nav #navbarNav .navbar-nav .nav-item .nav-link {
+    color: #000;
+    font-weight: 400;
+    padding: 8px 15px;
+    white-space: nowrap;
+    transition: 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.head__custom-nav #navbarNav .navbar-nav .nav-item .nav-link:hover {
+    color: lightcoral;
+}
+
+.custom-section {
+    width: inherit;
+    padding: 40px 0;
+}
+
+@media screen and (max-width: 991.98px) {
+    .custom-section {
+        flex-direction: column-reverse;
+    }
+}
+
+.custom-section .col-lg-4 {
+    margin-top: 100px;
+}
+
+.custom-section .col-lg-4 h2 {
+    font-weight: 700;
+    font-size: 63px;
+    color: #000;
+    margin-bottom: 0;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.custom-section .col-lg-4 h3 {
+    font-weight: 300;
+    font-size: 64px;
+    color: #000;
+    line-height: 1;
+}
+
+.custom-section .col-lg-4 p {
+    color: #000;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.custom-section .col-lg-4 a {
+    display: inline-block;
+    padding: 8px 22px;
+    color: #fff;
+    background-color: #1EA5F7;
+    border: 1px solid transparent;
+    margin-top: 60px;
+    text-decoration: none;
+    transition: 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.custom-section .col-lg-4 a:hover {
+    color: #1EA5F7;
+    background-color: #fff;
+    border: 1px solid #1EA5F7;
+}
+
+.custom-section .col-lg-8 img {
+    width: 100%;
+    padding-left: 15%;
+
+}
+
+
+
+
+/* jumbotron */
+.jumbotron {
+    background-image: url("/img/bgme.jpg");
+    background-size: cover;
+    background-position: 1px;
+    height: 40%;
+    text-align: center;
+    position: relative;
+}
+
+.jumbotron .container {
+    z-index: 1;
+    position: relative;
+}
+
+.jumbotron::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 80%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    position: absolute;
+    bottom: 0;
+}
+
+.jumbotron .display-4 {
+    color: white;
+    margin-top: 150px;
+    font-weight: 200;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.jumbotron .display-4 span {
+    font-weight: 700;
+}
+
+/* Info panel */
+.info-panel {
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    margin-top: -100px;
+    background-color: white;
+    padding: 30px;
+}
+
+.info-panel p {
+    font-size: 14px;
+    color: #acacac;
+    font-weight: 200;
+}
+
+
+/* footer */
+.footer {
+    margin-top: 100px;
+}
+
+.footer p {
+    color: #acacac;
+    font-size: 18px;
+}
+
+
+.custom-button {
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+
+/* Button Social Media */
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-discord {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.fa-skype {
+    background: #00aff0;
+    color: white;
+}

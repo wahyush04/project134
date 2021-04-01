@@ -4,7 +4,7 @@ use PhpParser\Node\Stmt\Echo_;
 ?>
 @extends('layout.main')
 
-@section('title','Daftar Mahasiswa')
+@section('title','Students')
 
 @section('container')
 
@@ -24,7 +24,7 @@ use PhpParser\Node\Stmt\Echo_;
                 @foreach($students as $student)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     {{$student->nama}}
-                    <a href="/students/{{$student->id}}" class="badge bg-info">Detail</a>
+                    <a href="/students/{{$student->id}}" class="badge bg-info text-white">Detail</a>
                 </li>
                 @endforeach
             </ul>

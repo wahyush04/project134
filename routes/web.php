@@ -11,6 +11,8 @@
 |
 */
 
+
+//Default Routing
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -20,9 +22,9 @@
 //     return view('aboutme', ['nama' => $nama]);
 // });
 
+//Routing with Controller
 Route::get('/', 'PagesController@home');
 Route::get('/aboutme', 'PagesController@aboutme');
-
 Route::get('/mahasiswa', 'MahasiswaController@index');
 
 //Student
@@ -34,5 +36,5 @@ Route::get('/mahasiswa', 'MahasiswaController@index');
 // Route::get('/students/{student}/edit', 'StudentsController@edit');
 // Route::patch('/students/{student}', 'StudentsController@update');
 
-
+//Automatic All
 Route::resource('students', 'StudentsController');
