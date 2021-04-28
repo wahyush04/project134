@@ -19,9 +19,9 @@ use PhpParser\Node\Stmt\Echo_;
                     @method('patch')
                         @csrf
                         <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" name="nama" value="{{($student->nama)}}" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan Nama">
-                            @error('nama')
+                            <label for="name">Nama</label>
+                            <input type="text" name="name" value="{{($student->name)}}" class="form-control @error('name') is-invalid @enderror" placeholder="Masukkan Nama">
+                            @error('name')
                             <div class="invalid-feedback">
                                 {{$message}}
                             </div>
@@ -60,7 +60,7 @@ use PhpParser\Node\Stmt\Echo_;
                             </select>
                         </div> -->
 
-                        <button type="reset" class="btn btn-danger" name="breset">KOSONGKAN</button>
+                        <a href="/students" class="btn btn-secondary">kembali</a>
                         <button type="submit" class="btn btn-primary" name="submit">Ubah data</button>
                     </form>
                 </div>

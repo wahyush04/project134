@@ -17,15 +17,13 @@
 //     return view('welcome');
 // });
 
-// Route::get('/aboutme', function () {
-//     $nama = 'Wahyu Syarif';
-//     return view('aboutme', ['nama' => $nama]);
-// });
+Route::get('/iportofolio', function () {
+    return view('index');
+});
 
 //Routing with Controller
 Route::get('/', 'PagesController@home');
 Route::get('/aboutme', 'PagesController@aboutme');
-Route::get('/mahasiswa', 'MahasiswaController@index');
 
 //Student
 // Route::get('/students', 'StudentsController@index');
@@ -38,3 +36,4 @@ Route::get('/mahasiswa', 'MahasiswaController@index');
 
 //Automatic All
 Route::resource('students', 'StudentsController');
+Route::resource('ujian', 'UjianController');

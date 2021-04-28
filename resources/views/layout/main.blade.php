@@ -39,7 +39,7 @@
                             <a class="nav-link" href="{{url('/aboutme')}}">About Me</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/mahasiswa')}}">Mahasiswa</a>
+                            <a class="nav-link" href="{{url('/ujian')}}">Ujian</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/students')}}">Students</a>

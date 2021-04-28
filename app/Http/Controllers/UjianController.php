@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Ujian;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\student;
 
-class MahasiswaController extends Controller
+class UjianController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,8 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        // $mahasiswa = DB::table('students')->get();
-        $mahasiswa = student::all();
-        return view('mahasiswa.index',['mahasiswa' => $mahasiswa]);
+        $ujians = Ujian::all();
+        return view('ujian.index', compact('ujians'));
     }
 
     /**
@@ -27,7 +25,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('ujian.create');
     }
 
     /**
@@ -38,7 +36,14 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_mk' => 'required',
+            'dosen' => 'required',
+            'jumlah_soal' => 'required'
+        ]);
+
+        Ujian::create($request->all());
+        return redirect('/ujian')->with('status', 'Data Berhasil Ditambahkan!');
     }
 
     /**
@@ -58,9 +63,9 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Ujian $ujian)
     {
-        //
+        return view('ujian.edit', compact('ujian'));
     }
 
     /**
@@ -70,19 +75,32 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Ujian $ujian)
     {
-        //
+        $request->validate([
+            'nama_mk' => 'required',
+            'dosen' => 'required',
+            'jumlah_soal' => 'required'
+        ]);
+
+        Ujian::where('id', $ujian->id)->update([
+            'nama_mk' => $request->nama_mk,
+            'dosen' => $request->dosen,
+            'jumlah_soal' => $request->jumlah_soal,
+            'keterangan' => $request->keterangan
+        ]);
+        return redirect('/ujian')->with('status', 'Data Berhasil Diubah!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Ujian
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Ujian $ujian)
     {
-        //
+        Ujian::destroy($ujian->id);
+        return redirect('/ujian')->with('status', 'Data Berhasil Dihapus!');
     }
 }

@@ -23,7 +23,7 @@ use PhpParser\Node\Stmt\Echo_;
             <ul class="list-group">
                 @foreach($students as $student)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    {{$student->nama}}
+                    {{$student->name}}
                     <a href="/students/{{$student->id}}" class="badge bg-info text-white">Detail</a>
                 </li>
                 @endforeach

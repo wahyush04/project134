@@ -30,7 +30,7 @@ class StudentsController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * 
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -55,7 +55,7 @@ class StudentsController extends Controller
 
         //cara 3
         $request->validate([
-                'nama'=>'required',
+                'name'=>'required',
                 'nim'=>'required|size:10'
         ]);
 
@@ -96,12 +96,12 @@ class StudentsController extends Controller
     public function update(Request $request, Student $student)
     {
         $request->validate([
-            'nama' => 'required',
+            'name' => 'required',
             'nim' => 'required|size:10'
         ]);
 
         Student::where('id', $student->id)->update([
-            'nama'=> $request->nama,
+            'name'=> $request->name,
             'nim'=> $request->nim,
             'email'=> $request->email,
             'jurusan'=> $request->jurusan

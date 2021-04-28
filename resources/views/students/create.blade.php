@@ -18,9 +18,9 @@ use PhpParser\Node\Stmt\Echo_;
                     <form method="POST" action="/students">
                         @csrf
                         <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" name="nama" value="{{old('nama')}}" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan Nama">
-                            @error('nama')
+                            <label for="name">Nama</label>
+                            <input type="text" name="name" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" placeholder="Masukkan Nama">
+                            @error('name')
                             <div class="invalid-feedback">
                                 {{$message}}
                             </div>
